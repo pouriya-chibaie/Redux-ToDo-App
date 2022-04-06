@@ -16,7 +16,7 @@ const Input = () => {
   };
   const deleteTask = (id) => {
     const task = [...tasks];
-    const filteredTask = task.filter((p) => p.id !== id);
+    const filteredTask = task.filter((t) => t.id !== id);
     dispatch({ type: CLEAR_TASK, payload: filteredTask });
     console.log(filteredTask);
   };
