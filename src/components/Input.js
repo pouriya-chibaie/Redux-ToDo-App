@@ -1,12 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  addTask,
-  clearTask,
-  CLEAR_TASK,
-  setTask,
-  SET_TASK,
-} from "../redux/action";
+import { addTask, CLEAR_TASK, setTask } from "../redux/action";
 
 const Input = () => {
   const setValue = (value) => {
@@ -17,9 +11,8 @@ const Input = () => {
   const dispatch = useDispatch();
 
   const pushTo = () => {
- 
     dispatch(addTask(currentTask));
-    dispatch(setTask(""))
+    dispatch(setTask(""));
   };
   const deleteTask = (id) => {
     const task = [...tasks];
