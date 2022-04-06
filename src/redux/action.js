@@ -1,16 +1,15 @@
 export const ADD_TASK = "ADD_TASK";
-export const addTask=(val)=>{
+let id =0;
+export const addTask=(row)=>{
     return{
         type:ADD_TASK,
-        payload:val
+        payload:{
+            id:++id,
+            content:row
+        }
     }
 }
-export const REMOVE_TASK="REMOVE_TASK";
-export const removeTask=()=>{
-    return{
-        type:REMOVE_TASK
-    }
-}
+
 export const SET_TASK="SET_TASK";
 export const setTask=(task)=>{
     return{
@@ -19,9 +18,13 @@ export const setTask=(task)=>{
     }
 }
 export const CLEAR_TASK="CLEAR_TASK"
-export const clearTask=()=>{
+export const clearTask=(id,filterState)=>{
     return{
         type:CLEAR_TASK,
+        payload:{
+            id,
+            filterState
+        }
       
     }
 }
